@@ -1,0 +1,9 @@
+Playlab puzzle:
+https://studio.code.org/c/1468391006
+
+Playlab "game":
+https://studio.code.org/projects/playlab/L2cBRmYNvMWcghd15zym0G__MRKymq81qDqbT-us_QM
+
+I really did not enjoy the playlab. Customization is practically nonexistant, you can do basically nothing with projectiles,
+and the playing field is so small a mouse would feel cramped inside. Every concept I came up with was impossible due to the limited nature
+of the lab. (I couldn't even make a really simple snowball fight because projectiles have no way of registering collisions!)
