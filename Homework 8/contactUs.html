@@ -1,0 +1,80 @@
+<html>
+
+    <title>Contact Us</title>
+    <head>
+        <H1>Contact Us</H1>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script>
+            function submit(){
+                if(checkBoxes() == true){
+                    location.replace("thankYou.html");
+                }
+            }
+            function checkBoxes(){
+                var valid = new Boolean(1);
+                var firstName = document.getElementById("firstName").value;
+                var lastName = document.getElementById("lastName").value;
+                var email = document.getElementById("email").value;
+                var termsChecked = document.getElementById("termsCheck").checked;
+
+                //Check the above for empty response
+                if(email == ""){
+                    document.getElementById("email").style.backgroundColor = "pink";
+                    document.getElementById("email").focus();
+                    requiredFields();
+                    valid = false;
+                }
+                if(lastName == ""){
+                    document.getElementById("lastName").focus();
+                    document.getElementById("lastName").style.backgroundColor = "pink";
+                    requiredFields();
+                    valid = false;
+                }
+                if(firstName == ""){
+                    document.getElementById("firstName").style.backgroundColor = "pink";
+                    document.getElementById("firstName").focus();
+                    requiredFields();
+                    valid = false;
+                }
+                if(termsChecked == false){
+                    document.getElementById("pleaseCheck").innerHTML = "Please accept the Terms and Conditions before continuing";
+                    valid = false;
+                }
+                if(valid != false){
+                    return true;
+                }
+            }
+            function requiredFields(){
+                document.getElementById("requiredFields").innerHTML = "Missing required fields:"
+            }
+        </script>
+    </head>
+    <body>
+        <span id="requiredFields" style="color: red"></span><br>
+        
+        <span style="color: red">*</span>First Name:<input type="text" id="firstName"><br>
+        Middle Name:<input type="text" id="middleName"><br>
+        <span style="color: red">*</span>Last Name:<input type="text" id="lastName"><br>
+        <span style="color: red">*</span>Email Address:<input type="text" id="email"><br>
+        Phone Number:<input type="text" id="phoneN"><br>
+        Home Address:<input type="text" id="address"><br>
+        Social Security Number:<input type="text" id="ssn"><br><br>
+        Credit/Debit Card Number:<input type="text" id="ccn"><br>
+        Expiration Date:<input type="text" id="ccExp"><br>
+        CVV/CRN Number:<input type="text" id="ccCvv"><br><br>
+        Mother's Maiden Name:<input type="text" id="mMaiden"><br><br>
+        <span id="pleaseCheck" style="color: red"></span><br>
+        <span style="color: red">*</span>Do you agree to the <span style="text-decoration: underline; color: blue;">terms and conditions</span>?: <input id= "termsCheck" type="checkbox">
+        <p></p>
+        <button id="submit" onclick="submit()">Submit</button>
+
+        
+
+
+    </body>
+
+
+
+
+
+</html>

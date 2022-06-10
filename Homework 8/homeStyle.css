@@ -1,0 +1,23 @@
+body{
+    background-color: darkcyan;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+footer{
+    margin-top: 250px;
+    background-color: cyan;
+}
+
+div.subHeader{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: medium;
+    text-shadow: gray;
+}
+
+#exception{
+    font-style: italic;
+    color:darkslateblue;
+}
