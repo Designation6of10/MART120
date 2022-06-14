@@ -1,0 +1,95 @@
+<html>
+<title>Math Game</title>
+
+<head>
+  <script>
+    var actualAnswer;
+    var number1;
+    var number2;
+    var qNmbr = 1;
+    var qTotal = 10;
+    var correct = 0;
+    var incorrect = 0;
+
+    function printQuestion() {
+        number1 = Math.floor(Math.random() * 10);
+        number2 = Math.floor(Math.random() * 10);
+        actualAnswer = number1 + number2;
+        document.getElementById("qNmbr").innerHTML = "Question " + qNmbr + "/" + qTotal;
+        document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
+    }
+
+    function checkAnswer() {
+        var answer = document.getElementById("txtAnswer").value;
+        const result = document.getElementById("result");
+        const finalResult = document.getElementById("finalResult");
+        const txtAnswer = document.getElementById("txtAnswer");
+        const btnSubmit = document.getElementById("btnSubmit");
+        const question = document.getElementById("theQuestion");
+        const yrAnsr = document.getElementById("yrAnsr");
+        const qNmbrTxt = document.getElementById("qNmbr");
+        
+
+        
+        if (answer == actualAnswer) {
+            result.innerHTML = "Good job!";
+            correct++;
+        } else {
+            result.innerHTML = "Not quite.";
+            incorrect++;
+        }
+        if (qNmbr < qTotal){
+            qNmbr++;
+            printQuestion();
+            txtAnswer.value = "";
+            txtAnswer.focus();
+        }
+        else {
+            var score = (correct / qTotal) * 100;
+
+            //clear the page
+            qNmbrTxt.hidden = true;
+            txtAnswer.hidden = true;
+            result.hidden = true;
+            btnSubmit.hidden = true;
+            question.hidden = true;
+            yrAnsr.hidden = true;
+
+            //show results
+            finalResult.innerHTML = "<h2>Your results:</h2><br />Correct: " + correct + "<br />Incorrect: " + incorrect + "<br />Score: " + score + "%";
+        }
+    }
+
+    function runGame() {
+      printQuestion();
+    }
+    runGame();
+  </script>
+</head>
+
+<body onload="runGame();">
+
+    <div id="finalResult"></div>
+  <table>
+    <tr>
+        <td colspan="2">
+            <div id="qNmbr"></div>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div id="theQuestion"></div>
+      </td>
+    </tr>
+    <tr>
+        <td><div id="yrAnsr">Your answer</div></td>
+        <td><input type="text" id="txtAnswer"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+    </tr>
+  </table>
+  <div id="result"></div><br>
+</body>
+
+</html>
