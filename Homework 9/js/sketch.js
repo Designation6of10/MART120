@@ -106,7 +106,7 @@ function draw(){
   fill(r,g,b);
   circle(180,230,50);
   circle(320,230,50);
-  stroke("black");
+  stroke(0,0,0,180);
   strokeWeight(30);
   point(180,230);
   point(320,230);
