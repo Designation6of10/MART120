@@ -219,17 +219,17 @@ function drawEnemies() {
         enemy1Pos[1] = canvasHeight + (wallWidth * 2.5);
     }
     
-    if (enemy2Pos[0] > (canvasWidth + wallWidth * 2.5)) {
-        enemy2Pos[0] = 0 - (wallWidth * 2.5);
+    if (enemy2Pos[0] > (canvasWidth + wallWidth * 3.5)) {
+        enemy2Pos[0] = 0 - (wallWidth * 3.5);
     }
-    if (enemy2Pos[0] < (0 - (wallWidth * 2.5))) {
-        enemy2Pos[0] = canvasWidth + (wallWidth * 2.5);
+    if (enemy2Pos[0] < (0 - (wallWidth * 3.5))) {
+        enemy2Pos[0] = canvasWidth + (wallWidth * 3.5);
     }
-    if (enemy2Pos[1] > (canvasHeight + (wallWidth * 2.5))) {
-        enemy2Pos[1] = 0 - (wallWidth * 2.5);
+    if (enemy2Pos[1] > (canvasHeight + (wallWidth * 3.5))) {
+        enemy2Pos[1] = 0 - (wallWidth * 3.5);
     }
-    if (enemy2Pos[1] < (0 - (wallWidth * 2.5))) {
-        enemy2Pos[1] = canvasHeight + (wallWidth * 2.5);
+    if (enemy2Pos[1] < (0 - (wallWidth * 3.5))) {
+        enemy2Pos[1] = canvasHeight + (wallWidth * 3.5);
     }
 
     enemy1Pos[0] += enemy1Speed[0];
@@ -240,7 +240,8 @@ function drawEnemies() {
     strokeWeight(wallWidth / 2);
     fill(255, 10, 10);
     quad(enemy1Pos[0], enemy1Pos[1] - (wallWidth * 2.5), enemy1Pos[0] + (wallWidth * 2.5), enemy1Pos[1], enemy1Pos[0], enemy1Pos[1] + (wallWidth * 2.5), enemy1Pos[0] - (wallWidth * 2.5), enemy1Pos[1])
-    quad(enemy2Pos[0], enemy2Pos[1] - (wallWidth * 2.5), enemy2Pos[0] + (wallWidth * 2.5), enemy2Pos[1], enemy2Pos[0], enemy2Pos[1] + (wallWidth * 2.5), enemy2Pos[0] - (wallWidth * 2.5), enemy2Pos[1])
+    fill(200, 150, 10);
+    quad(enemy2Pos[0], enemy2Pos[1] - (wallWidth * 3.5), enemy2Pos[0] + (wallWidth * 3.5), enemy2Pos[1], enemy2Pos[0], enemy2Pos[1] + (wallWidth * 3.5), enemy2Pos[0] - (wallWidth * 3.5), enemy2Pos[1])
 }
 
 function drawObstacle() {
